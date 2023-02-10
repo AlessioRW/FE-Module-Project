@@ -1,0 +1,15 @@
+@import '../variables';
+
+.c-btn{
+    background-color: $green;
+    border: none;
+    border-radius: 10px;
+    height: 3em;
+    color: white;
+
+    &:hover{
+        filter: brightness(110%);
+
+    }
+}
+

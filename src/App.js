@@ -1,13 +1,10 @@
-import { useEffect } from 'react';
-import './App.css';
+import { createContext, useEffect, useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Home } from './pages/Home';
+
+export const TokenContext = createContext()
 
 function App() {
-
-  const CLIENT_ID = "d403f28e99054b44b0bd98298f309f28"
-  const REDIRECT_URI = "http://localhost:3000"
-  const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
-  const RESPONSE_TYPE = "token"
-
   const [token, setToken] = useState('')
   useEffect(() => {
     const hash = window.location.hash
@@ -30,11 +27,16 @@ function App() {
 
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login to Spotify</a>
-      </header>
-    </div>
+    <TokenContext.Provider value={token}>
+      <div className="App">
+        <BrowserRouter>
+          <Routes>
+            <Route exact path='/' element={<Home />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </TokenContext.Provider>
+
   );
 }
 

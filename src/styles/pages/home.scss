@@ -1,0 +1,76 @@
+@import '../variables.scss';
+
+
+
+.page-home-login{
+    width: 20%;
+    height: 40%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+    background-color: $light-black;
+
+    button{
+        width: 30%;
+        font-size: 1em;
+    }
+
+}
+
+.page-home{
+    width: 60%;
+    height: 80%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+    border-radius: 10px;
+    background-color: $light-black;
+
+    button{
+        width: 30%;
+        font-size: 1em;
+    }
+
+    .username{
+        color: white;
+    }
+
+    .profile-picture{
+        width: 50%;
+        border-radius: 2000px;
+    }
+
+    .top-songs{
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        margin-top: auto;
+
+        align-items: center;
+        .title{
+            color: white;
+        }
+        .song-container{
+            display: flex;
+            color: white;
+            justify-content: center;
+            gap: 0.2em;
+            .song-title{
+                font-size: 1em;
+                margin: 0px;
+            }
+            .artist-list{
+                font-size: 0.8em;
+                margin: 0px;
+            }
+        }
+    }
+    
+
+}
