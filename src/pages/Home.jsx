@@ -17,18 +17,28 @@ export function Home(){
     const [topSongs, setTopSongs] = useState([])
     const [topArtists, setTopArtists] = useState([])
     const [timeRange, setTimeRange] = useState('short_term')
+    const [playlists, setPlaylists] = useState([])
     const token = useContext(TokenContext)
+
+    const header = {
+        "Authorization": `Bearer ${token}`
+      }
+      
     useEffect(() => {
         if (token){
             // console.log(token)
-            const header = {
-                "Authorization": `Bearer ${token}`
-              }
+            
             fetch('https://api.spotify.com/v1/me', {headers: header}).then(res => res.json()).then(data => {setProfile(data)})
             fetch(`https://api.spotify.com/v1/me/top/tracks?limit=5&time_range=${timeRange}`, {headers:header}).then(res => res.json()).then(data => {setTopSongs(data.items)})
             fetch(`https://api.spotify.com/v1/me/top/artists?limit=5&time_range=${timeRange}`, {headers:header}).then(res => res.json()).then(data => {setTopArtists(data.items)})
         }
     }, [token])
+
+    useEffect(() => { //seperate use effect which requires data from first use effect
+        if (profile){
+            fetch(`https://api.spotify.com/v1/users/${profile.id}/playlists?limit=50`, {headers:header}).then(res => res.json()).then(data => {setPlaylists(data.items)})
+        }
+    }, [profile])
 
 
 
@@ -47,10 +57,42 @@ export function Home(){
         )
     } else {
         if (profile){
+            console.log(profile)
             return (
                 <div className="page-home">
-                    <h1 className="username">{profile.display_name}</h1>
-                    <img className="profile-picture" src={profile.images[0].url}/>
+
+                    <div className="profile">
+                        <div className="user-info">
+                            <h1 className="username">{profile.display_name}</h1>
+                            <img className="profile-picture" src={profile.images[0].url}/>
+                        </div>
+
+                        <div className="my-playlists"> {/*sorry for the awful div class names  */}
+                            <h2 className="title">My Playlists</h2>
+                            <div className="playlists">
+                                {playlists.map((playlist) => {
+                                    console.log(playlist)
+
+                                    let playlistName = playlist.name
+                                    if (playlistName.length > 20){
+                                        playlistName = playlistName.substring(0,20) + '...'
+                                    }
+
+                                    return (
+                                        <div className="playlist-container">
+                                            <img className="image" src={playlist.images[0].url}/>
+                                            <h2 className="name">{playlistName}</h2>
+
+                                            <h2 className="track-num">{playlist.tracks.total} songs</h2>
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                   
 
                     <div className="top">
                         <div className="top-songs">
@@ -68,7 +110,7 @@ export function Home(){
                                 }
                         
                                 return (
-                                    <div className="song-container">
+                                    <div key={song.id} className="song-container">
                                         <img className="album-cover" src={song.album.images[0].url}/>
                                         <h2 className="song-title">{songName}</h2>
                                         <h3 className="artist-list"> by {artists.join(', ')}</h3>
@@ -83,7 +125,7 @@ export function Home(){
                                 {topArtists.map((artist) => {
 
                                     return (
-                                        <div className="artist-container">
+                                        <div key={artist.id} className="artist-container">
                                             <h2 className="name">{artist.name}</h2>
                                             <img className="image" src={artist.images[0].url}/>
                                                 

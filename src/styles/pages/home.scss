@@ -37,19 +37,77 @@
 
     overflow-y: scroll;
 
-    button{
-        width: 30%;
-        font-size: 1em;
+
+    .profile{
+        width: 100%;
+        display: flex;
+        .user-info{
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;            
+            .username{
+                color: white;
+                font-size: 2vw;
+                font-size: min(20px);
+                text-align: center;
+
+                
+            }
+        
+            .profile-picture{
+                width: 50%;
+                border-radius: 2000px;
+            }
+        }
+        
+        .my-playlists{
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+
+            .title{
+                height: min-content;
+            }
+
+            .playlists{
+                width: 90%;
+                overflow: scroll;
+                height: 9em;
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+
+                .playlist-container{
+                    display: flex;
+                    width: 100%;
+                    padding-right: 1%;
+                    gap: 0.5em;
+                    .name{
+                        font-size: 1.1em;
+                    }
+
+                    .image{
+                        width: 50px;
+                        height: 50px;
+                    }
+
+                    .track-num{
+                        font-size: 0.8em;
+                        margin-left: auto;
+                        align-self: center;
+                    }
+
+                }
+            }
+        }
+
+        
     }
 
-    .username{
-        color: white;
-    }
-
-    .profile-picture{
-        width: 50%;
-        border-radius: 2000px;
-    }
+    
 
     .top{
         display: flex;
@@ -58,14 +116,17 @@
 
         .top-songs{
             width: 50%;
-            margin-left: 1em;
+            
             align-self: start;
             justify-content: flex-start;
             display: flex;
             flex-direction: column;
             gap: 1em;
+
             margin-top: 2em;
             margin-bottom: 2em;
+            margin-left: 1em;
+
     
     
             
@@ -76,7 +137,10 @@
             .song-container{
                 display: flex;
                 color: white;
-                gap: 0.2em;
+                gap: 0.5em;
+
+                padding-top: 0.1em;
+                padding-bottom: 0.1em;
                 .song-title{
                     font-size: 1em;
                     margin: 0px;
@@ -86,12 +150,21 @@
                     font-size: 0.7em;
                     margin: 0px;
                     align-self: center;
+                    justify-self: end;
+                    width: auto;
+                    text-align: end;
+                    margin-left: auto;
                 }
 
                 .album-cover{
                     width: 50px;
                     border-radius: 3px;
                 }
+                
+                border-style: solid;
+                border-right: 0px;
+                border-left: 0px;
+                border-width: 0.1em;
             }
         }
 
@@ -108,6 +181,7 @@
             align-items: flex-end;
             .title{
                 color: white;
+                margin-bottom: 1.2em;
             }
 
             .artists{
@@ -119,8 +193,20 @@
                     justify-content: flex-end;
                     gap: 0.5em;
 
+                    border-style: solid;
+                    border-right: 0px;
+                    border-left: 0px;
+                    border-width: 0.1em;
+                    padding-top: 0.1em;
+                    padding-bottom: 0.1em;
+
+                    color: white;
+
                     .name{
                         color: white;
+                        margin: 0px;
+                        align-self: center;
+                        font-size: 1.3em;
                     }
 
                     .image{
@@ -128,7 +214,8 @@
                         height: 50px;
                         border-radius: 3px;
                     }
-                }   
+                }
+                
             }
         }
     }
