@@ -61,6 +61,8 @@ export function Home(){
             return (
                 <div className="page-home">
 
+                <div className="bar">.</div>
+
                     <div className="user-info">
                         <h1 className="username">{profile.display_name}</h1>
                         <img className="profile-picture" src={profile.images[0].url}/>
@@ -159,7 +161,9 @@ export function Home(){
                                 })}
                             </div>
                             
-                        </div>
+                    </div>
+
+                    <div className="bar">.</div>
                     
                     
                                      
