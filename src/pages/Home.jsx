@@ -32,13 +32,13 @@ export function Home(){
             fetch(`https://api.spotify.com/v1/me/top/tracks?limit=5&time_range=${timeRange}`, {headers:header}).then(res => res.json()).then(data => {setTopSongs(data.items)})
             fetch(`https://api.spotify.com/v1/me/top/artists?limit=5&time_range=${timeRange}`, {headers:header}).then(res => res.json()).then(data => {setTopArtists(data.items)})
         }
-    }, [token])
+    }, [token,timeRange])
 
     useEffect(() => { //seperate use effect which requires data from first use effect
         if (profile){
             fetch(`https://api.spotify.com/v1/users/${profile.id}/playlists?limit=50`, {headers:header}).then(res => res.json()).then(data => {setPlaylists(data.items)})
         }
-    }, [profile])
+    }, [profile,timeRange])
 
 
 
@@ -61,36 +61,35 @@ export function Home(){
             return (
                 <div className="page-home">
 
-                    <div className="profile">
-                        <div className="user-info">
-                            <h1 className="username">{profile.display_name}</h1>
-                            <img className="profile-picture" src={profile.images[0].url}/>
-                        </div>
+                    <div className="user-info">
+                        <h1 className="username">{profile.display_name}</h1>
+                        <img className="profile-picture" src={profile.images[0].url}/>
+                    </div>
 
-                        <div className="my-playlists"> {/*sorry for the awful div class names  */}
-                            <h2 className="title">My Playlists</h2>
-                            <div className="playlists">
-                                {playlists.map((playlist) => {
-                                    console.log(playlist)
+                    
+                    <div className="time-btns">
+                        <button 
+                            className={timeRange === 'short_term' ? 'c-btn btn-left' : "c-btn btn-unchecked btn-left"}
+                            onClick={() => {setTimeRange('short_term')}}
+                        >
+                            4 Weeks
+                        </button> 
 
-                                    let playlistName = playlist.name
-                                    if (playlistName.length > 20){
-                                        playlistName = playlistName.substring(0,20) + '...'
-                                    }
-
-                                    return (
-                                        <div className="playlist-container">
-                                            <img className="image" src={playlist.images[0].url}/>
-                                            <h2 className="name">{playlistName}</h2>
-
-                                            <h2 className="track-num">{playlist.tracks.total} songs</h2>
-                                        </div>
-                                    )
-                                })}
-                            </div>
-                            
-                        </div>
                         
+                        <button 
+                            className={timeRange === 'medium_term' ? 'c-btn' : "c-btn btn-unchecked"}
+                            onClick={() => {setTimeRange('medium_term')}}
+                            >
+                                6 Months
+                        </button> 
+
+
+                        <button 
+                            className={timeRange === 'long_term' ? 'c-btn btn-right' : "c-btn btn-unchecked btn-right"}
+                            onClick={() => {setTimeRange('long_term')}}
+                            >
+                                All Time
+                        </button> 
                     </div>
                    
 
@@ -135,7 +134,35 @@ export function Home(){
                             </div>
 
                         </div>
-                    </div>                    
+                    </div>
+
+
+                    <div className="my-playlists"> {/*sorry for the awful div class names  */}
+                            <h2 className="title">My Playlists</h2>
+                            <div className="playlists">
+                                {playlists.map((playlist) => {
+                                    console.log(playlist)
+
+                                    let playlistName = playlist.name
+                                    if (playlistName.length > 20){
+                                        playlistName = playlistName.substring(0,20) + '...'
+                                    }
+
+                                    return (
+                                        <div className="playlist-container">
+                                            <img className="image" src={playlist.images[0].url}/>
+                                            <h2 className="name">{playlistName}</h2>
+
+                                            <h2 className="track-num">{playlist.tracks.total} songs</h2>
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                            
+                        </div>
+                    
+                    
+                                     
                 </div>
             )
         }

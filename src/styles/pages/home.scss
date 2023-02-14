@@ -36,82 +36,38 @@
     max-height: 40em;
 
     overflow-y: scroll;
+    padding-bottom: 1em;
+    padding-top: 1em;
 
 
-    .profile{
-        width: 100%;
+    .user-info{
+        width: 80%;
+        
         display: flex;
-        .user-info{
-            width: 40%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;            
-            .username{
-                color: white;
-                font-size: 2vw;
-                font-size: min(20px);
-                text-align: center;
-
-                
-            }
-        
-            .profile-picture{
-                width: 50%;
-                border-radius: 2000px;
-            }
-        }
-        
-        .my-playlists{
-            width: 60%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        flex-direction: column;
+        align-items: center;            
+        .username{
             color: white;
+            font-size: 2vw;
+            font-size: min(20px);
+            text-align: center;
 
-            .title{
-                height: min-content;
-            }
-
-            .playlists{
-                width: 90%;
-                overflow: scroll;
-                height: 9em;
-                display: flex;
-                flex-direction: column;
-                gap: 1em;
-
-                .playlist-container{
-                    display: flex;
-                    width: 100%;
-                    padding-right: 1%;
-                    gap: 0.5em;
-                    .name{
-                        font-size: 1.1em;
-                    }
-
-                    .image{
-                        width: 50px;
-                        height: 50px;
-                    }
-
-                    .track-num{
-                        font-size: 0.8em;
-                        margin-left: auto;
-                        align-self: center;
-                    }
-
-                }
-            }
+            
         }
-
-        
-    }
-
     
+        .profile-picture{
+            width: 50%;
+            border-radius: 2000px;
+        }
+    }
+        
+
 
     .top{
         display: flex;
+        align-items: flex-start;
         width: 100%;
+        gap: 10px;
 
 
         .top-songs{
@@ -188,10 +144,13 @@
                 display: flex;
                 flex-direction: column;
                 gap: 1em;
+                width: 100%;
                 .artist-container{
                     display: flex;
                     justify-content: flex-end;
                     gap: 0.5em;
+
+                    
 
                     border-style: solid;
                     border-right: 0px;
@@ -218,8 +177,86 @@
                 
             }
         }
+        
     }
-    
-    
+
+    .my-playlists{
+        width: 60%;
+        height: 18em;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+        
+
+        .title{
+            height: min-content;
+        }
+
+        .playlists{
+            width: 100%;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+
+            .playlist-container{
+                display: flex;
+                width: 100%;
+                height: 80%;
+                padding-right: 1%;
+                gap: 0.5em;
+                .name{
+                    font-size: 1.1em;
+                }
+
+                .image{
+                    width: 50px;
+                    height: 50px;
+                }
+
+                .track-num{
+                    font-size: 0.8em;
+                    margin-left: auto;
+                    align-self: center;
+                }
+
+            }
+        }
+    }
+        
+    .time-btns{
+        margin-top: 3em;
+        display: flex;
+        width: 100%;
+
+        justify-content: center;
+
+        .c-btn{
+            border-radius: 0px;
+            
+
+        }
+
+        .btn-left{
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        .btn-right{
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .btn-unchecked{
+            background-color: transparent;
+            border-width: 1px;
+            border-style: solid;
+            border-color: $green;
+        }
+    }
 
 }
