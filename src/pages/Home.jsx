@@ -57,7 +57,7 @@ export function Home(){
         )
     } else {
         if (profile){
-            console.log(profile)
+            // console.log(profile)
             return (
                 <div className="home logged-in">
 
@@ -145,7 +145,7 @@ export function Home(){
                             <h2 className="title">My Playlists</h2>
                             <div className="playlists">
                                 {playlists.map((playlist) => {
-                                    console.log(playlist)
+                                    // console.log(playlist)
 
                                     let playlistName = playlist.name
                                     if (playlistName.length > 20){

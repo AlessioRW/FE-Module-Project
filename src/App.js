@@ -30,8 +30,8 @@ function App() {
   return (
     <TokenContext.Provider value={token}>
       <div className="App">
-        <Navbar />
         <BrowserRouter>
+          <Navbar />
           <Routes>
             <Route exact path='/' element={<Home />} />
           </Routes>

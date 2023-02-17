@@ -1,4 +1,5 @@
-import '../styles/components/navbar.scss'
+import { Link } from "react-router-dom";
+import '../styles/components/navbar.scss';
 
 export function Navbar(){
 
@@ -8,12 +9,10 @@ export function Navbar(){
 
             <div className="nav-items">
                <div className="nav-item">
-                    <h3>test 1</h3>
+                    <Link to='/' className="link">Home</Link>
                </div>
 
-               <div className="nav-item">
-                    <h3>test 2</h3>
-               </div>
+
 
                 
             </div>

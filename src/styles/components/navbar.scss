@@ -5,11 +5,13 @@
     height: 3em;
     width: 100%;
     top: 0;
-    
+
     .nav-items{
         display: flex;
         .nav-item{
-
+            .link{
+                color:white;
+            }
         }
     }
 }
