@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Home } from './pages/Home';
+import { Playlists } from './pages/Playlists';
 
 export const TokenContext = createContext()
 
@@ -34,6 +35,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route exact path='/' element={<Home />} />
+            <Route exact path='/playlists/' element={<Playlists />} />
           </Routes>
         </BrowserRouter>
       </div>

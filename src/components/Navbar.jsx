@@ -20,6 +20,10 @@ export function Navbar(){
                     <Link to='/' className="link" >Home</Link>
                </div>
 
+               <div className="nav-item">
+                    <Link to='/playlists/' className="link" >My Playlists</Link>
+               </div>
+
 
 
                 

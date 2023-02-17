@@ -23,7 +23,7 @@ export function Home(){
 
     const header = {
         "Authorization": `Bearer ${token}`
-      }
+    }
       
     useEffect(() => {
         if (token){
