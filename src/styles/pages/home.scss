@@ -97,6 +97,9 @@
 
                 padding-top: 0.1em;
                 padding-bottom: 0.1em;
+                padding-left: 0.1em;
+
+                height: 3.4em;
                 .song-title{
                     font-size: 1em;
                     margin: 0px;
@@ -119,8 +122,9 @@
                 
                 border-style: solid;
                 border-right: 0px;
-                border-left: 0px;
                 border-width: 0.1em;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
             }
         }
 
@@ -149,15 +153,17 @@
                     display: flex;
                     justify-content: flex-end;
                     gap: 0.5em;
-
-                    
+                    height: 3.4em;
 
                     border-style: solid;
-                    border-right: 0px;
                     border-left: 0px;
                     border-width: 0.1em;
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+
                     padding-top: 0.1em;
                     padding-bottom: 0.1em;
+                    padding-right: 0.1em;
 
                     color: white;
 
@@ -203,6 +209,8 @@
             display: flex;
             flex-direction: column;
             gap: 1em;
+
+            padding-right: 1em;
             
 
             .playlist-container{
@@ -261,12 +269,20 @@
         }
     }
 
-    .bar{
+    .bar-horizontal{
         margin-top: 2em;
         margin-bottom: 2em;
         height: 0.1em;
         width: 80%;
         background-color: $green;
+    }
+
+    .bar-vertical{
+        background-color: $green;
+        margin-top: 12%;
+        height: 80%;
+        align-self: center;
+        width: 0.08em;
     }
 
 

@@ -61,7 +61,7 @@ export function Home(){
             return (
                 <div className="page-home">
 
-                <div className="bar">.</div>
+                <div className="bar-horizontal">.</div>
 
                     <div className="user-info">
                         <h1 className="username">{profile.display_name}</h1>
@@ -119,6 +119,8 @@ export function Home(){
                                 )
                             })}
                         </div>
+
+                        <div className="bar-vertical">.</div>
                         
                         <div className="top-artists">
                             <h2 className="title"> Top Artists</h2>
@@ -163,7 +165,7 @@ export function Home(){
                             
                     </div>
 
-                    <div className="bar">.</div>
+                    <div className="bar-horizontal">.</div>
                     
                     
                                      
