@@ -46,7 +46,7 @@ export function Home(){
         return(
 
 
-            <div className='page-home-login'> 
+            <div className='home not-login'> 
 
                 <div className="info-section">
                     <h2 className="title" >Welcome to SoundStats</h2>
@@ -59,7 +59,7 @@ export function Home(){
         if (profile){
             console.log(profile)
             return (
-                <div className="page-home">
+                <div className="home logged-in">
 
                 <div className="bar-horizontal">.</div>
 
