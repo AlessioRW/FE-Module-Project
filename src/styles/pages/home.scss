@@ -1,8 +1,11 @@
 @import '../variables.scss';
 
+.home{
+    justify-self: center;
+    align-self: center;
+}
 
-
-.page-home-login{
+.not-login{
     width: 20%;
     height: 40%;
 
@@ -21,8 +24,8 @@
 
 }
 
-.page-home{
-    width: 60%;
+.logged-in{
+    width: 65%;
     height: 80%;
 
     display: flex;
@@ -38,6 +41,7 @@
     overflow-y: scroll;
     padding-bottom: 1em;
     padding-top: 1em;
+    
 
 
     .user-info{
@@ -66,7 +70,7 @@
     .top{
         display: flex;
         align-items: flex-start;
-        width: 100%;
+        width: 95%;
         gap: 10px;
 
 
