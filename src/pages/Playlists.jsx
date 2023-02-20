@@ -1,12 +1,12 @@
 import { useContext, useEffect, useState } from "react";
-import { TokenContext } from "../App";
+import { Context } from "../App";
 import { MyPlaylists } from "../components/MyPlaylists";
 import '../styles/pages/playlists.scss';
 
 export function Playlists(){
     const [playlists, setPlaylists] = useState([])
     const [profile, setProfile] = useState()
-    const token = useContext(TokenContext)
+    const {token} = useContext(Context)
 
     const header = {
         "Authorization": `Bearer ${token}`
@@ -25,8 +25,6 @@ export function Playlists(){
     }, [profile])
 
     return (
-
-        
 
         <div className="page-playlists">
             <div className="info">
