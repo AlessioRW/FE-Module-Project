@@ -40,7 +40,20 @@
                 height: 50px;
             }
 
+            .btn-container{
+                width:100% ;
+                display: flex;
+                justify-content: end;
+                align-items: center;
+
+                .c-btn{
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+            }
+
             .track-num{
+                right: 0;
                 font-size: 0.8em;
                 margin-left: auto;
                 align-self: center;

@@ -3,11 +3,12 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Home } from './pages/Home';
 import { Playlists } from './pages/Playlists';
+import { ViewPlaylist } from './pages/ViewPlaylist';
 
 export const Context = createContext()
 
 function App() {
-  const [profileLoaded, setPorfileLoaded] = useEffect(false)
+  const [profileLoaded, setProfileLoaded] = useState(false)
   const [token, setToken] = useState('')
   useEffect(() => {
     const hash = window.location.hash
@@ -30,13 +31,14 @@ function App() {
 
 
   return (
-    <Context.Provider value={{ token: token, profileLoaded: profileLoaded, setPorfileLoaded: setPorfileLoaded }}>
+    <Context.Provider value={{ token: token, profileLoaded: profileLoaded, setProfileLoaded: setProfileLoaded }}>
       <div className="App">
         <BrowserRouter>
           <Navbar />
           <Routes>
             <Route exact path='/' element={<Home />} />
             <Route exact path='/playlists/' element={<Playlists />} />
+            <Route exact path='/playlist/:id' element={<ViewPlaylist />} />
           </Routes>
         </BrowserRouter>
       </div>

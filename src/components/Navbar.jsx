@@ -8,7 +8,6 @@ export function Navbar(){
     const {profileLoaded, token} = useContext(Context)
     const navigate = useNavigate()
 
-    console.log(token)
     return (
         <div className="navbar">
             
@@ -19,11 +18,11 @@ export function Navbar(){
             </div>
 
             <div className="nav-items">
-               {token && <div className="nav-item">
+               {profileLoaded && <div className="nav-item">
                     <Link to='/' className="link" >Home</Link>
                </div>}
 
-               {token && <div className="nav-item">
+               {profileLoaded && <div className="nav-item">
                     <Link to='/playlists/' className="link" >My Playlists</Link>
                </div>}
 

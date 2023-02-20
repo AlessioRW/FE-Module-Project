@@ -1,15 +1,18 @@
 @import '../variables';
 
 .c-btn{
-    background-color: $green;
-    border: none;
+    background-color: transparent;
     border-radius: 10px;
     height: 3em;
     color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $green;
 
     &:hover{
         filter: brightness(110%);
-
+        background-color: $green;
     }
+    transition: all 0.2s;
 }
 
