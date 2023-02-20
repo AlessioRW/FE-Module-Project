@@ -4,9 +4,10 @@ import { Navbar } from './components/Navbar';
 import { Home } from './pages/Home';
 import { Playlists } from './pages/Playlists';
 
-export const TokenContext = createContext()
+export const Context = createContext()
 
 function App() {
+  const [profileLoaded, setPorfileLoaded] = useEffect(false)
   const [token, setToken] = useState('')
   useEffect(() => {
     const hash = window.location.hash
@@ -29,7 +30,7 @@ function App() {
 
 
   return (
-    <TokenContext.Provider value={token}>
+    <Context.Provider value={{ token: token, profileLoaded: profileLoaded, setPorfileLoaded: setPorfileLoaded }}>
       <div className="App">
         <BrowserRouter>
           <Navbar />
@@ -39,7 +40,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </div>
-    </TokenContext.Provider>
+    </Context.Provider>
 
   );
 }

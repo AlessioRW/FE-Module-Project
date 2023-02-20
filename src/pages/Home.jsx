@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react"
-import { TokenContext } from "../App"
+import { Context } from "../App"
 import { MyPlaylists } from "../components/MyPlaylists"
 import '../styles/components/button.scss'
 import '../styles/main.scss'
@@ -19,7 +19,7 @@ export function Home(){
     const [topArtists, setTopArtists] = useState([])
     const [timeRange, setTimeRange] = useState('short_term')
     const [playlists, setPlaylists] = useState([])
-    const token = useContext(TokenContext)
+    const {token, setProfileLoaded} = useContext(Context)
 
     const header = {
         "Authorization": `Bearer ${token}`
@@ -32,6 +32,7 @@ export function Home(){
             fetch('https://api.spotify.com/v1/me', {headers: header}).then(res => res.json()).then(data => {setProfile(data)})
             fetch(`https://api.spotify.com/v1/me/top/tracks?limit=5&time_range=${timeRange}`, {headers:header}).then(res => res.json()).then(data => {setTopSongs(data.items)})
             fetch(`https://api.spotify.com/v1/me/top/artists?limit=5&time_range=${timeRange}`, {headers:header}).then(res => res.json()).then(data => {setTopArtists(data.items)})
+            
         }
     }, [token,timeRange])
 

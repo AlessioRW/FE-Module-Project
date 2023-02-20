@@ -1,11 +1,14 @@
+import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { Context } from "../App";
 import logo from '../common/images/logo.png';
 import '../styles/components/navbar.scss';
 
 export function Navbar(){
-
+    const {profileLoaded, token} = useContext(Context)
     const navigate = useNavigate()
 
+    console.log(token)
     return (
         <div className="navbar">
             
@@ -16,13 +19,13 @@ export function Navbar(){
             </div>
 
             <div className="nav-items">
-               <div className="nav-item">
+               {token && <div className="nav-item">
                     <Link to='/' className="link" >Home</Link>
-               </div>
+               </div>}
 
-               <div className="nav-item">
+               {token && <div className="nav-item">
                     <Link to='/playlists/' className="link" >My Playlists</Link>
-               </div>
+               </div>}
 
 
 
