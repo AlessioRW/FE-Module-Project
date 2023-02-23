@@ -1,3 +1,113 @@
+@import '../variables.scss';
+@import '../components/button.scss';
+
 .page-view-playlist{
+    height: 90%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    background-color: $light-black;
+    border-radius: 10px;
+    color: white;
+    padding-bottom: 4em;
+
+    min-width: 500px;
+
+    .main-info{
+        padding-top: 4em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+        
+
+        .cover{
+            width: 40%;
+            border-radius: 1px;
+            padding: 10px;
+            background-color: $lighter-black;
+        }
+
+        .name{
+            margin-bottom: 0px;
+        }
+
+        .length{
+            margin-top: 7px;
+            font-size: 0.7em;
+        }
+
+        .desc{
+            font-size: 0.8em;
+        }
+    }
+
+    .songs{
+        display: flex;
+        align-self: center;
+        flex-direction: column;
+        align-items: center;
+        width: 60%;
+        height: 400px;
+        background-color: $lighter-black;
+        padding: 10px;
+        border-radius: 10px;
+
+        overflow-y: scroll;
+
+        .song-container{
+
+            width: 100%;
+            .song-info{
+                min-height: 4em;
+                display: flex;
+                width: 100%;
+
+                .album-cover{
+                    width: 45px;
+                    height: 45px;
+                    align-self: center;
+                    border-radius: 2px;
+                    margin-right: 0.3em;
+
+                }
+
+                .name{
+                    font-size: 1em;
+                    align-self: center;
+                    width: 60%;
+                }
     
+                .artists{
+                    font-size: 0.8em;
+                    margin-left: auto;
+                    align-self: center;
+                    justify-self: center;
+                    text-align: right;
+                    margin-right: 3%;
+                    width: 40%;
+                }
+
+            }
+
+            .bar{
+                width: 97%;
+                height: 0.1em;
+                justify-self: center;
+                background-color: white;
+                color: $light-black;
+            }
+        }
+        
+
+        .more-btn{
+            margin-top: 0.5em;
+            padding: 10px;
+
+        }
+    }
+
+
 }

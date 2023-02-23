@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Context } from "../App";
 import { MyPlaylists } from "../components/MyPlaylists";
 import '../styles/pages/playlists.scss';
@@ -7,7 +8,8 @@ export function Playlists(){
     const [playlists, setPlaylists] = useState([])
     const [profile, setProfile] = useState()
     const {token} = useContext(Context)
-
+    const navigate = useNavigate()
+    
     const header = {
         "Authorization": `Bearer ${token}`
     }
@@ -15,7 +17,9 @@ export function Playlists(){
     useEffect(() => {
         if (token){
             fetch('https://api.spotify.com/v1/me', {headers: header}).then(res => res.json()).then(data => {setProfile(data)})
-            }
+        } else{
+            navigate('/')
+        }
     }, [token])
 
     useEffect(() => { //seperate use effect which requires data from first use effect
