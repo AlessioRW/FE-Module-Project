@@ -255,3 +255,71 @@
 
 
 }
+
+@media (max-width: 700px){
+        .not-login{
+            width: 100%;
+        }
+
+        .logged-in{
+            width: 100%;
+        }
+
+        .top{
+            flex-direction: column;
+            align-items: center !important;
+            align-content: center !important;
+
+            .top-songs{
+                width: 500px !important;
+                margin-left: 0px !important;
+                margin-left: 0px !important;
+
+                .title{
+                    text-align: left;
+                    margin-left: 0.1em;
+                }
+
+                .song-container{
+                    width: 85vw;
+                    justify-self: center;
+                    margin: 0px;
+                    border-left: 0px !important;
+                    border-top-left-radius: 0px !important;
+                    border-bottom-left-radius: 0px !important;
+                }
+                
+            }
+
+            .top-artists{
+                flex-direction: column;
+                align-items: center !important;
+                align-content: center !important;
+                width: 100% !important;
+                margin-top: 2% !important;
+                margin-right: 0px !important;
+
+                .name{
+                    text-align: left;
+                    margin-left: 0.1em;
+                }
+
+                .artist-container{
+                    width: 85vw;
+                    justify-self: center;
+                    margin: 0px;
+                    border-right: 0px !important;
+                    border-top-right-radius: 0px !important;
+                    border-bottom-right-radius: 0px !important;
+                }
+                    
+                }
+        }
+
+        .bar-vertical{
+            width: 90% !important;
+            height: 0.1em !important;
+            margin-top: 2% !important;
+            align-self: flex-start !important;
+        }
+}
