@@ -112,3 +112,10 @@
 
 
 }
+
+@media (min-width: 700px){
+    .page-view-playlist{
+        width: 100vw !important;
+        min-width: none !important;
+    }
+}
