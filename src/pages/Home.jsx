@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react"
-import { TokenContext } from "../App"
+import { Context } from "../App"
+import { MyPlaylists } from "../components/MyPlaylists"
 import '../styles/components/button.scss'
 import '../styles/main.scss'
 import '../styles/pages/home.scss'
@@ -18,11 +19,11 @@ export function Home(){
     const [topArtists, setTopArtists] = useState([])
     const [timeRange, setTimeRange] = useState('short_term')
     const [playlists, setPlaylists] = useState([])
-    const token = useContext(TokenContext)
+    const {token, setProfileLoaded} = useContext(Context)
 
     const header = {
         "Authorization": `Bearer ${token}`
-      }
+    }
       
     useEffect(() => {
         if (token){
@@ -31,6 +32,7 @@ export function Home(){
             fetch('https://api.spotify.com/v1/me', {headers: header}).then(res => res.json()).then(data => {setProfile(data)})
             fetch(`https://api.spotify.com/v1/me/top/tracks?limit=5&time_range=${timeRange}`, {headers:header}).then(res => res.json()).then(data => {setTopSongs(data.items)})
             fetch(`https://api.spotify.com/v1/me/top/artists?limit=5&time_range=${timeRange}`, {headers:header}).then(res => res.json()).then(data => {setTopArtists(data.items)})
+            setProfileLoaded(true)
         }
     }, [token,timeRange])
 
@@ -141,29 +143,7 @@ export function Home(){
                     </div>
 
 
-                    <div className="my-playlists"> {/*sorry for the awful div class names  */}
-                            <h2 className="title">My Playlists</h2>
-                            <div className="playlists">
-                                {playlists.map((playlist) => {
-                                    // console.log(playlist)
-
-                                    let playlistName = playlist.name
-                                    if (playlistName.length > 20){
-                                        playlistName = playlistName.substring(0,20) + '...'
-                                    }
-
-                                    return (
-                                        <div className="playlist-container">
-                                            <img className="image" src={playlist.images[0].url}/>
-                                            <h2 className="name">{playlistName}</h2>
-
-                                            <h2 className="track-num">{playlist.tracks.total} songs</h2>
-                                        </div>
-                                    )
-                                })}
-                            </div>
-                            
-                    </div>
+                    <MyPlaylists playlists={playlists}/>
 
                     <div className="bar-horizontal">.</div>
                     
