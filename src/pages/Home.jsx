@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react"
 import { Context } from "../App"
+import logo from '../common/images/logo.png'
 import { MyPlaylists } from "../components/MyPlaylists"
 import '../styles/components/button.scss'
 import '../styles/main.scss'
@@ -49,9 +50,10 @@ export function Home(){
 
 
             <div className='home not-login'> 
-
+                <img src={logo} alt="" className="logo" />
                 <div className="info-section">
                     <h2 className="title" >Welcome to SoundStats</h2>
+                    <p className="desc">Click the login button to link your account through the Spotify API with this app so you can view your account analytics</p>
 
                 </div>
                 <button onClick={() => {window.location.href=loginUrl}} className="c-btn">Login</button>
