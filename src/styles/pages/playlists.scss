@@ -18,6 +18,17 @@
         color: white;
         font-size: 1em;
         margin-top: 2em;
+        text-align: center;
     }
 
+}
+
+@media (max-width: 700px){
+    .page-playlists{
+        width: 100% !important;
+
+        .info{
+            padding-left: 10%;
+        }
+    }
 }
