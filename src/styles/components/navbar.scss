@@ -48,3 +48,14 @@
         }
     }
 }
+
+@media (max-width: 700px){
+    .navbar{
+        gap: 0px;
+        .nav-items{
+            margin-right: 3em;
+            width: 100% !important;
+            justify-content: center;
+        }
+    }
+}

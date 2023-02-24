@@ -18,3 +18,13 @@
 html{
     background-color: $black;
 }
+
+@media (max-width: 700px){
+    .App{
+        background-color: $light-black;
+    }
+
+    html{
+        background-color: $light-black;
+    }
+}

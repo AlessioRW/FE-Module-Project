@@ -110,8 +110,8 @@ export function Home(){
                                 }
 
                                 let songName = song.name
-                                if (song.name.length > 40){
-                                    songName = song.name.substring(0,40) + '...'
+                                if (song.name.length > 25){
+                                    songName = song.name.substring(0,25) + '...'
                                 }
                         
                                 return (

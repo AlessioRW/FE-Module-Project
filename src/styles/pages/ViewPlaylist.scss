@@ -88,6 +88,7 @@
                     text-align: right;
                     margin-right: 3%;
                     width: 40%;
+                    overflow-x: hidden;
                 }
 
             }
@@ -110,4 +111,11 @@
     }
 
 
+}
+
+@media (max-width: 700px){
+    .page-view-playlist{
+        width: 100vw !important;
+        min-width: none !important;
+    }
 }
