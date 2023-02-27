@@ -98,7 +98,6 @@ export function Home(){
                         </button> 
                     </div>
                    
-
                     <div className="top">
                         <div className="top-songs">
                             <h2 className="title">Top Songs</h2>
