@@ -18,5 +18,9 @@ export function TopGenres(){
         }
     }, [token])
 
-    return ()
+    return (
+        <div className="page-popularity">
+            
+        </div>
+    )
 }
