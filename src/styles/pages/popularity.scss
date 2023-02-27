@@ -14,10 +14,11 @@
     .title{
         margin-top: 2em;
         font-size: 140%;
+        margin-bottom: 8px;
     }
     .desc{
         margin: 0px;
-        font-size: 90%;
+        font-size: 80%;
     }
 
     .avg-popularity{
@@ -28,8 +29,8 @@
         display: flex;
         flex-direction: column;
         width: 70%;
-        padding-bottom: 1em;
-        padding-top: 1em;
+        padding: 1em;
+
 
         h2{
             text-align: center;
@@ -40,6 +41,7 @@
         .popularity{
             font-size: 150%;
             margin-top: 0.6em;
+            text-align: center;
         }
 
         h3{
