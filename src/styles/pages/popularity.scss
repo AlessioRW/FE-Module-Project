@@ -1,7 +1,7 @@
 @import '../variables.scss';
 
 .page-popularity{
-    width: 60%;
+    width: 50%;
     height: 80%;
     background-color: $light-black;
     border-radius: 15px;
@@ -12,6 +12,42 @@
     align-items: center;
 
     .title{
-        margin-top: 1em;
+        margin-top: 2em;
+        font-size: 140%;
+    }
+    .desc{
+        margin: 0px;
+        font-size: 90%;
+    }
+
+    .avg-popularity{
+        background-color: $lighter-black;
+        border-radius: 10px;
+
+        margin-top: 2em;
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        padding-bottom: 1em;
+        padding-top: 1em;
+
+        h2{
+            text-align: center;
+            font-size: 100%;
+            margin: 0px;
+        }
+
+        .popularity{
+            font-size: 150%;
+            margin-top: 0.6em;
+        }
+
+        h3{
+            margin-top: 5px;
+            margin-bottom: 0px;
+            font-size: 70%;
+            text-align: center;
+        }
+        
     }
 }
