@@ -26,6 +26,10 @@ export function Navbar(){
                     <Link to='/playlists/' className="link" >My Playlists</Link>
                </div>}
 
+               {profileLoaded && <div className="nav-item">
+                    <Link to='/popularity/' className="link" >Popularity</Link>
+               </div>}
+
 
 
                 

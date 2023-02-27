@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Home } from './pages/Home';
 import { Playlists } from './pages/Playlists';
+import { Popularity } from './pages/Popularity';
 import { ViewPlaylist } from './pages/ViewPlaylist';
 
 export const Context = createContext()
@@ -39,6 +40,7 @@ function App() {
             <Route exact path='/' element={<Home />} />
             <Route exact path='/playlists/' element={<Playlists />} />
             <Route exact path='/playlist/:id' element={<ViewPlaylist />} />
+            <Route exact path='/popularity' element={<Popularity />} />
           </Routes>
         </BrowserRouter>
       </div>

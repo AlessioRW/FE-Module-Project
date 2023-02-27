@@ -1,0 +1,17 @@
+@import '../variables.scss';
+
+.page-popularity{
+    width: 60%;
+    height: 80%;
+    background-color: $light-black;
+    border-radius: 15px;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title{
+        margin-top: 1em;
+    }
+}
