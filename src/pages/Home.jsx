@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { Context } from "../App"
 import logo from '../common/images/logo.png'
 import { MyPlaylists } from "../components/MyPlaylists"
+import { TopGenres } from "../components/TopGenres"
 import '../styles/components/button.scss'
 import '../styles/main.scss'
 import '../styles/pages/home.scss'
@@ -20,6 +21,7 @@ export function Home(){
     const [topArtists, setTopArtists] = useState([])
     const [timeRange, setTimeRange] = useState('short_term')
     const [playlists, setPlaylists] = useState([])
+    const [genreTracks, setGenreTracks] = useState([])
     const {token, setProfileLoaded} = useContext(Context)
 
     const header = {
@@ -40,6 +42,7 @@ export function Home(){
     useEffect(() => { //seperate use effect which requires data from first use effect
         if (profile){
             fetch(`https://api.spotify.com/v1/users/${profile.id}/playlists?limit=50`, {headers:header}).then(res => res.json()).then(data => {setPlaylists(data.items)})
+            fetch(`https://api.spotify.com/v1/me/top/tracks?limit=50&time_range=${timeRange}`, {headers:header}).then(res => res.json()).then(data => {setGenreTracks(data.items)})
         }
     }, [profile,timeRange])
 
@@ -98,7 +101,7 @@ export function Home(){
                         </button> 
                     </div>
                    
-
+                    <TopGenres tracks={genreTracks}/>
                     <div className="top">
                         <div className="top-songs">
                             <h2 className="title">Top Songs</h2>
