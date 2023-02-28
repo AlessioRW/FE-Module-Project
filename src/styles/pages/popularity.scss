@@ -213,5 +213,13 @@
         flex-direction: column;
         width: 95%;
         max-width: 30em;
+        gap: 1em;
+
+        .most-popular{
+            .song-container{
+                border-right-width: 1px;
+
+            }
+        }
     }
 }
