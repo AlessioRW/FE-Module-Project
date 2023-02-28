@@ -7,7 +7,7 @@ export function Popularity(){
     const [songs, setSongs] = useState([])
     const {token} = useContext(Context)
     const [timeRange, setTimeRange] = useState('short_term')
-    const [avgPopularity, setAvgPopularity] = useState(-1)
+    const [avgPopularity, setAvgPopularity] = useState()
     const [byPopularity, setByPopularity] = useState([]) 
 
 
@@ -44,7 +44,7 @@ export function Popularity(){
                     }
                 }
             }
-            console.log(orderedSongs)
+            setByPopularity(orderedSongs)
         }
     }, [songs])
 
