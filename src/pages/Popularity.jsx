@@ -60,7 +60,32 @@ export function Popularity(){
     return (
         <div className="page-popularity">
             <h1 className="title">See how popular your music taste is!</h1>
-            <h2 className="desc">Based on your top 50 most listened to songs</h2>
+            <h2 className="desc">Based on your top 50 most listened to songs over the past...</h2>
+
+            <div className="time-btns">
+                        <button 
+                            className={timeRange === 'short_term' ? 'c-btn btn-left' : "c-btn btn-unchecked btn-left"}
+                            onClick={() => {setTimeRange('short_term')}}
+                        >
+                            4 Weeks
+                        </button> 
+
+                        
+                        <button 
+                            className={timeRange === 'medium_term' ? 'c-btn' : "c-btn btn-unchecked"}
+                            onClick={() => {setTimeRange('medium_term')}}
+                            >
+                                6 Months
+                        </button> 
+
+
+                        <button 
+                            className={timeRange === 'long_term' ? 'c-btn btn-right' : "c-btn btn-unchecked btn-right"}
+                            onClick={() => {setTimeRange('long_term')}}
+                            >
+                                All Time
+                        </button> 
+                    </div>
 
             <div className="avg-popularity">
                 <h2>The average popularity of the 50 songs you most listen to is...</h2>
