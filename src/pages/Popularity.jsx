@@ -95,7 +95,7 @@ export function Popularity(){
                     })}
                 </div>
                 
-                <div className="bar-horizontal">.</div>
+                
 
                 <div className="least-popular">
                     <h2 className="header">Least Popular</h2>
