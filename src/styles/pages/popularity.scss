@@ -24,6 +24,7 @@
     .avg-popularity{
         background-color: $lighter-black;
         border-radius: 10px;
+        
 
         margin-top: 2em;
         display: flex;
@@ -67,10 +68,23 @@
             flex-direction: column;
             gap: 0.4em;
 
+            
+            
             .header{
                 height: fit-content;
                 margin: 0px;
                 margin-bottom: 0.5em;
+            }
+
+            .song-container{
+                border-right-width: 0px ;
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+                .artists{
+                    text-align: right;
+                    margin-left: auto;
+                }
+                
             }
 
             
@@ -86,6 +100,8 @@
             align-items: end;
             gap: 0.4em;
 
+            
+
             .header{
                 height: fit-content;
                 margin: 0px;
@@ -94,6 +110,9 @@
 
             .song-container{
                 justify-content: end;
+                border-left-width: 0px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
                 img{
                     width: 50px;
                     height: 50px;
@@ -101,23 +120,37 @@
                 .title{
                     text-align: right;
                 }
+                .artists{
+                    
+                }
             }
         }
 
         .song-container{ //general container, see above for left right specific styles
-            width: 100%;
+            width: 95%;
             height: 3.5em;
             display: flex;
             gap: 0.5em;
+            border-style: solid;
+            border-radius: 10px;
+            border-width: 1px;
+            padding: 2px;
+            
             img{
                 width: 50px;
                 height: 50px;
+                align-self: center;
             }
             .title{
                 align-self: center;
                 margin: 0px;
                 font-size: 1em;
-                width: 50%;
+                width: 70%;
+            }
+
+            .artists{
+                font-size: 0.7em;
+                align-self: center;
             }
         }
 
