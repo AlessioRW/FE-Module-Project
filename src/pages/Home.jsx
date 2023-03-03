@@ -52,10 +52,10 @@ export function Home(){
                 <img src={logo} alt="" className="logo" />
                 <div className="info-section">
                     <h2 className="title" >Welcome to SoundStats</h2>
-                    <p className="desc">Click the login button to link your account through the Spotify API with this app so you can view your account analytics</p>
+                    <p  className="desc">Click the login button to link your account through the Spotify API with this app so you can view your account analytics</p>
 
                 </div>
-                <button onClick={() => {window.location.href=loginUrl}} className="c-btn">Login</button>
+                <button test-id='login-btn' onClick={() => {window.location.href=loginUrl}} className="c-btn">Login</button>
             </div>
         )
     } else {
@@ -67,7 +67,7 @@ export function Home(){
                 <div className="bar-horizontal">.</div>
 
                     <div className="user-info">
-                        <h1 className="username">{profile.display_name}</h1>
+                        <h1 test-id='name-heading' className="username">{profile.display_name}</h1>
                         <img className="profile-picture" src={profile.images[0].url}/>
                     </div>
 
@@ -113,7 +113,7 @@ export function Home(){
                                 }
                         
                                 return (
-                                    <div key={song.id} className="song-container">
+                                    <div test-id='top-songs' key={song.id} className="song-container">
                                         <img className="album-cover" src={song.album.images[0].url}/>
                                         <h2 className="song-title">{songName}</h2>
                                         <h3 className="artist-list"> by {artists.join(', ')}</h3>
@@ -130,7 +130,7 @@ export function Home(){
                                 {topArtists.map((artist) => {
 
                                     return (
-                                        <div key={artist.id} className="artist-container">
+                                        <div test-id='top-artists' key={artist.id} className="artist-container">
                                             <h2 className="name">{artist.name}</h2>
                                             <img className="image" src={artist.images[0].url}/>
                                                 
