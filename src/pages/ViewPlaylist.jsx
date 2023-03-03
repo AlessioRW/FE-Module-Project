@@ -2,8 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Context } from "../App";
 import '../styles/pages/ViewPlaylist.scss';
-function getAvgDuration(playlist){
-}
 
 
 export function ViewPlaylist(){
