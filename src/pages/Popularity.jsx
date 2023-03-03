@@ -1,3 +1,4 @@
+
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../App";
@@ -9,7 +10,6 @@ export function Popularity(){
     const [timeRange, setTimeRange] = useState('short_term')
     const [avgPopularity, setAvgPopularity] = useState()
     const [byPopularity, setByPopularity] = useState([]) 
-
 
     const navigate = useNavigate()
     
