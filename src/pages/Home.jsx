@@ -76,6 +76,7 @@ export function Home(){
                         <button 
                             className={timeRange === 'short_term' ? 'c-btn btn-left' : "c-btn btn-unchecked btn-left"}
                             onClick={() => {setTimeRange('short_term')}}
+                            test-id='short-term-btn'
                         >
                             4 Weeks
                         </button> 
@@ -84,6 +85,7 @@ export function Home(){
                         <button 
                             className={timeRange === 'medium_term' ? 'c-btn' : "c-btn btn-unchecked"}
                             onClick={() => {setTimeRange('medium_term')}}
+                            test-id='med-term-btn'
                             >
                                 6 Months
                         </button> 
@@ -92,6 +94,7 @@ export function Home(){
                         <button 
                             className={timeRange === 'long_term' ? 'c-btn btn-right' : "c-btn btn-unchecked btn-right"}
                             onClick={() => {setTimeRange('long_term')}}
+                            test-id='long-term-btn'
                             >
                                 All Time
                         </button> 

@@ -22,11 +22,24 @@ describe('all tests', () => {
 
 
   it('Home Page', () => {
+    //heading
     cy.get('[test-id="name-heading"]').should('have.text', 'Alessio')
 
+    //top songs and aritsts
     cy.get('[test-id="top-songs"]').should('have.length', 5)
     cy.get('[test-id="top-artists"]').should('have.length', 5)
 
+    //info changes on button click
+    const songsShort = []
+    cy.get('[test-id="top-songs"]').each((song) => { songsShort.push(song[0].textContent) })
+
+    cy.get('[test-id="long-term-btn"]').click()
+    cy.wait(500)
+
+    const songsLong = []
+    cy.get('[test-id="top-songs"]').each((song) => { songsLong.push(song[0].textContent); })
+
+    expect(songsShort).to.not.eq(songsLong)
   })
 
 })
