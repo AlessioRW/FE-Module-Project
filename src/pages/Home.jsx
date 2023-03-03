@@ -44,7 +44,6 @@ export function Home(){
     }, [profile,timeRange])
 
 
-
     if (!token){ //user is not logged in
         return(
 

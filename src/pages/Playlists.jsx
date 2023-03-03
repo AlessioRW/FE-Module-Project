@@ -32,9 +32,10 @@ export function Playlists(){
 
         <div className="page-playlists">
             <div className="info">
-                <p>Click the name of any of your playlists to see the analysis of it</p>
+                <p>Click the name of any of your playlists to see the overview of it</p>
             </div>
             <MyPlaylists playlists={playlists}/>
         </div>
     )
 }
+
