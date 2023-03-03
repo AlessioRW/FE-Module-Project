@@ -150,6 +150,4 @@ export function Popularity(){
             </div>
         </div>
     )
-
-    
 }

@@ -8,7 +8,6 @@ export function MyPlaylists({playlists}){
     function viewPlaylist(id){
         naviage(`/playlist/${id}`)
     }
-
     return (
         <div className="my-playlists"> {/*sorry for the awful div class names  */}
             <h2 className="title">My Playlists</h2>
