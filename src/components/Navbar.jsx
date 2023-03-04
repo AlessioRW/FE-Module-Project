@@ -27,7 +27,7 @@ export function Navbar(){
                </div>}
 
                {profileLoaded && <div className="nav-item">
-                    <Link to='/popularity/' className="link" >Popularity</Link>
+                    <Link to='/popularity/' className="link" test-id='popularity-link'>Popularity</Link>
                </div>}
 
 
