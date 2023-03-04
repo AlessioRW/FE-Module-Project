@@ -114,7 +114,7 @@ export function Home(){
                         
                                 return (
                                     <div key={song.id} className="song-container">
-                                        <img alt="album cover" className="album-cover" src={song.album.images[0].url}/>
+                                        <img  alt={`album cover for ${song.name}`} className="album-cover" src={song.album.images[0].url}/>
                                         <h2 className="song-title">{songName}</h2>
                                         <h3 className="artist-list"> by {artists.join(', ')}</h3>
                                     </div>
@@ -132,7 +132,7 @@ export function Home(){
                                     return (
                                         <div key={artist.id} className="artist-container">
                                             <h2 className="name">{artist.name}</h2>
-                                            <img alt="artist picture" className="image" src={artist.images[0].url}/>
+                                            <img  alt={`album cover for ${song.name}`} className="image" src={artist.images[0].url}/>
                                                 
                                         </div>
                                     )

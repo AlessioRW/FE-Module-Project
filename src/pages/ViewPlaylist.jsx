@@ -75,7 +75,7 @@ export function ViewPlaylist(){
                         return (
                             <div key={song.id} className="song-container">
                                 <div className="song-info">
-                                    <img alt='album cover' className='album-cover' src={song.album.images[0].url} />
+                                    <img  alt={`album cover for ${song.name}`} className='album-cover' src={song.album.images[0].url} />
                                     <h2 className="name">{songName}</h2>
                                     <h2 className="artists">{artists}</h2>
                                 </div>
