@@ -66,6 +66,7 @@ export function Popularity(){
                         <button 
                             className={timeRange === 'short_term' ? 'c-btn btn-left' : "c-btn btn-unchecked btn-left"}
                             onClick={() => {setTimeRange('short_term')}}
+                            test-id='short-term-btn'
                         >
                             4 Weeks
                         </button> 
@@ -74,6 +75,7 @@ export function Popularity(){
                         <button 
                             className={timeRange === 'medium_term' ? 'c-btn' : "c-btn btn-unchecked"}
                             onClick={() => {setTimeRange('medium_term')}}
+                            test-id='med-term-btn'
                             >
                                 6 Months
                         </button> 
@@ -82,14 +84,15 @@ export function Popularity(){
                         <button 
                             className={timeRange === 'long_term' ? 'c-btn btn-right' : "c-btn btn-unchecked btn-right"}
                             onClick={() => {setTimeRange('long_term')}}
+                            test-id='long-term-btn'
                             >
                                 All Time
                         </button> 
                     </div>
 
             <div className="avg-popularity">
-                <h2>The average popularity of the 50 songs you most listen to is...</h2>
-                <h2 className="popularity">{avgPopularity}</h2>
+                <h2>The average popularity of the 50 songs you listen to most is...</h2>
+                <h2 className="popularity" test-id="popularity-number">{avgPopularity}</h2>
                 <h3>(0 = Least Popular 100 = most popular)</h3>
             </div>
 
@@ -110,7 +113,7 @@ export function Popularity(){
                             }
                             
                             return (
-                                <div className="song-container">
+                                <div className="song-container" test-id="most-popular">
                                     <img src={song.img} alt="" className="cover" />
                                     <h2 className="title">{songName}</h2>
                                     <h2 className="artists">by {artists.join(', ')}</h2>
