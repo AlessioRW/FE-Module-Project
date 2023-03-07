@@ -114,7 +114,7 @@ export function Popularity(){
                             
                             return (
                                 <div className="song-container" test-id="most-popular">
-                                    <img src={song.img} alt="" className="cover" />
+                                    <img src={song.img} alt="album cover" className="cover" />
                                     <h2 className="title">{songName}</h2>
                                     <h2 className="artists">by {artists.join(', ')}</h2>
                                 </div>
@@ -144,7 +144,7 @@ export function Popularity(){
                                     <div className="song-container">
                                         <h2 className="artists">by {artists.join(', ')}</h2>
                                         <h2 className="title">{songName}</h2>
-                                        <img src={song.img} alt="" className="cover" />
+                                        <img src={song.img} alt={`album cover for ${song.name}`} className="cover" />
                                     </div>
                                 )
                             }

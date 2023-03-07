@@ -49,7 +49,7 @@ export function Home(){
 
 
             <div className='home not-login'> 
-                <img src={logo} alt="" className="logo" />
+                <img src={logo} alt="profile picture" className="logo" />
                 <div className="info-section">
                     <h2 className="title" >Welcome to SoundStats</h2>
                     <p  className="desc">Click the login button to link your account through the Spotify API with this app so you can view your account analytics</p>
@@ -117,7 +117,7 @@ export function Home(){
                         
                                 return (
                                     <div test-id='top-songs' key={song.id} className="song-container">
-                                        <img className="album-cover" src={song.album.images[0].url}/>
+                                        <img  alt={`album cover for ${song.name}`} className="album-cover" src={song.album.images[0].url}/>
                                         <h2 className="song-title">{songName}</h2>
                                         <h3 className="artist-list"> by {artists.join(', ')}</h3>
                                     </div>
@@ -135,7 +135,7 @@ export function Home(){
                                     return (
                                         <div test-id='top-artists' key={artist.id} className="artist-container">
                                             <h2 className="name">{artist.name}</h2>
-                                            <img className="image" src={artist.images[0].url}/>
+                                            <img  alt={`album cover for ${song.name}`} className="image" src={artist.images[0].url}/>
                                                 
                                         </div>
                                     )

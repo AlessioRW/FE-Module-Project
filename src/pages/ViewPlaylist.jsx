@@ -49,7 +49,7 @@ export function ViewPlaylist(){
                 {/* {console.log(playlist)} */}
 
                 <div className="main-info">
-                    <img src={playlist.images[0].url} alt="" className="cover" />
+                    <img alt='playlist cover' src={playlist.images[0].url} className="cover" />
                     <h2 className="name">{playlist.name}</h2>
                     <h2 className="length">{playlist.tracks.total} tracks</h2>
                     <h2 className="desc">{playlist.description}</h2>
@@ -75,7 +75,7 @@ export function ViewPlaylist(){
                         return (
                             <div key={song.id} className="song-container">
                                 <div className="song-info">
-                                    <img className='album-cover' src={song.album.images[0].url} alt="" />
+                                    <img  alt={`album cover for ${song.name}`} className='album-cover' src={song.album.images[0].url} />
                                     <h2 className="name">{songName}</h2>
                                     <h2 className="artists">{artists}</h2>
                                 </div>

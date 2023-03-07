@@ -22,7 +22,7 @@ export function MyPlaylists({playlists}){
 
                     return (
                         <div key={playlist.id} className="playlist-container">
-                            <img className="image" src={playlist.images[0].url}/>
+                            <img alt='playlist cover' className="image" src={playlist.images[0].url}/>
                             <h2 className="name">{playlistName}</h2>
 
                             <div className='btn-container'>
