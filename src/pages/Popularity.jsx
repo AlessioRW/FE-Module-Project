@@ -94,6 +94,7 @@ export function Popularity(){
             </div>
 
             <div className="top">
+                {console.log(byPopularity)}
                 <div className="most-popular">
                     <h2 className="header">Most Popular</h2>
                     {byPopularity.slice(0).reverse().map((song,i) => {
