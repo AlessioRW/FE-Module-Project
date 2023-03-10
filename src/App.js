@@ -11,6 +11,7 @@ export const Context = createContext()
 function App() {
   const [profileLoaded, setProfileLoaded] = useState(false)
   const [token, setToken] = useState('')
+  const [playlistFilter, setPlaylistFilter] = useState('')
   useEffect(() => {
     const hash = window.location.hash
     let token = window.localStorage.getItem('token')
@@ -33,7 +34,7 @@ function App() {
 
   return (
     <Context.Provider value={{ token: token, profileLoaded: profileLoaded, setProfileLoaded: setProfileLoaded }}>
-      <div className="App">
+      <div className="App"> -
         <BrowserRouter>
           <Navbar />
           <Routes>
