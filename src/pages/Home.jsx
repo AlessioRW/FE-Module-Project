@@ -135,7 +135,7 @@ export function Home(){
                                     return (
                                         <div test-id='top-artists' key={artist.id} className="artist-container">
                                             <h2 className="name">{artist.name}</h2>
-                                            <img  alt={`album cover for ${song.name}`} className="image" src={artist.images[0].url}/>
+                                            <img  alt={`album cover for ${artist.name}`} className="image" src={artist.images[0].url}/>
                                                 
                                         </div>
                                     )
