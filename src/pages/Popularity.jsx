@@ -37,12 +37,19 @@ export function Popularity(){
             let orderedSongs = [{name: songs[0].name, popularity: songs[0].popularity, img:songs[0].album.images[0].url, artists: songs[0].artists}] //temp array for songs sorted by popularity
             let usedName = orderedSongs[0].name
             for (let song of songs){
+                let songAdded = false
                 for (let i = 0; i < orderedSongs.length; i++){
+                    
                     let checkSong =  orderedSongs[i]
+                    
                     if (checkSong.popularity >= song.popularity){
                         orderedSongs.splice(i, 0, {name: song.name, popularity: song.popularity, img:song.album.images[0].url, artists: song.artists})
+                        songAdded = true
                         break
                     }
+                }
+                if (songAdded === false){
+                    orderedSongs.push(song)
                 }
             }
 
@@ -108,8 +115,8 @@ export function Popularity(){
                             }
 
                             let songName = song.name
-                            if (song.name.length > 25){
-                                songName = song.name.substring(0,25) + '...'
+                            if (song.name.length > 20){
+                                songName = song.name.substring(0,20) + '...'
                             }
                             
                             return (
@@ -136,8 +143,8 @@ export function Popularity(){
                                 }
 
                                 let songName = song.name
-                                if (song.name.length > 25){
-                                    songName = song.name.substring(0,25) + '...'
+                                if (song.name.length > 20){
+                                    songName = song.name.substring(0,20) + '...'
                                 }
 
                                 return (
