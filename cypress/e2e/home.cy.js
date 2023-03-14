@@ -13,7 +13,7 @@ describe('all tests', () => {
 
       cy.origin('https://accounts.spotify.com', () => {
         cy.get('[data-testid="login-username"]').type('alessiowright@hotmail.com')
-        cy.get('[data-testid="login-password"]').type('2yGXeMX8intHTHE')
+        cy.get('[data-testid="login-password"]').type('[my password]')
         cy.get('[data-testid="login-button"]').click()
         cy.wait(500)
       })
